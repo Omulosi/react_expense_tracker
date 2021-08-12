@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 
 import useStyles from "./styles";
 
-function Details({ title }) {
+const Details = ({ title }) => {
   const classes = useStyles();
   return (
     <Card className={title === "Income" ? classes.income : classes.expense}>
@@ -15,6 +15,6 @@ function Details({ title }) {
       </CardContent>
     </Card>
   );
-}
+};
 
 export default Details;
