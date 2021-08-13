@@ -1,7 +1,4 @@
-import React, {
-  useReducer,
-  createContext,
-} from "core-js/library/fn/reflect/es7/metadata";
+import React, { useReducer, createContext } from "react";
 import contexReducer from "./contextReducer";
 
 const initialState = [];

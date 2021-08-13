@@ -25,8 +25,8 @@ const Main = () => {
           variant="subtitle1"
           style={{ lineHeight: "1.5em", marginTop: "20px" }}
         >
-          {/** Infor Card */}
-          Try sating: Add income for $100 in Category salary for Monday
+          {/** Info Card */}
+          Try saying: Add income for $100 in Category salary for Monday...
         </Typography>
         <Divider />
         <Form />
