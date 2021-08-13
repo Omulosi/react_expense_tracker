@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core";
 
 import useStyles from "./styles";
+import Form from "./Form/Form";
+import List from "./List/List";
 
 const Main = () => {
   const classes = useStyles();
@@ -27,13 +29,13 @@ const Main = () => {
           Try sating: Add income for $100 in Category salary for Monday
         </Typography>
         <Divider />
-        {/** Form */}
+        <Form />
       </CardContent>
 
       <CardContent className={classes.CardContent}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            {/** List */}
+            <List />
           </Grid>
         </Grid>
       </CardContent>
