@@ -18,6 +18,7 @@ import {
 } from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 import useStyles from "./styles";
+import CustomizedSnackbar from "../../Snackbar/Snackbar";
 
 const initialState = {
   amount: "",
@@ -30,11 +31,11 @@ const Form = () => {
   const classes = useStyles();
 
   const [formData, setFormData] = useState(initialState);
+  const [open, setOpen] = useState(false);
   const { addTransaction } = useContext(ExpenseTrackerContext);
   const { segment } = useSpeechContext();
 
   const createTransaction = () => {
-    console.log(formData);
     if (Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) {
       return;
     }
@@ -43,6 +44,7 @@ const Form = () => {
       amount: Number(formData.amount),
       id: uuidv4(),
     };
+    setOpen(true);
     addTransaction(transaction);
     setFormData(initialState);
   };
@@ -108,6 +110,7 @@ const Form = () => {
 
   return (
     <Grid container spacing={2}>
+      <CustomizedSnackbar open={open} setOpen={setOpen} />
       <Grid item xs={12}>
         <Typography align="center" variant="subtitile2" gutterBottom>
           {segment ? <>{segment.words.map((w) => w.value).join(" ")}</> : null}
